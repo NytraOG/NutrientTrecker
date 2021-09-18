@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application>
+  <Localization>
+    <LocalizationGroup Name="Enums">
+      <LocalizationGroup Name="DevExpress.Persistent.Base.SecurityPermissionPolicy">
+        <LocalizationItem Name="AllowAllByDefault" Value="Standardmäßig alles erlauben" />
+        <LocalizationItem Name="DenyAllByDefault" Value="Standardmäßig alles verweigern" />
+        <LocalizationItem Name="ReadOnlyAllByDefault" Value="Standardmäßig nur lesen" />
+      </LocalizationGroup>
+      <LocalizationGroup Name="DevExpress.Persistent.Base.SecurityPermissionState">
+        <LocalizationItem Name="Allow" Value="Erlauben" />
+        <LocalizationItem Name="Deny" Value="Verweigern" />
+      </LocalizationGroup>
+    </LocalizationGroup>
+  </Localization>
+  <Views>
+    <DetailView Id="CustomApplicationRole_DetailView">
+      <Items>
+        <PropertyEditor Id="CanEditModel" Caption="Kann Modell bearbeiten" />
+        <PropertyEditor Id="IsAdministrative" Caption="Ist Administrator" />
+        <PropertyEditor Id="NavigationPermissions" Caption="Navigationsberechtigungen" />
+        <PropertyEditor Id="PermissionPolicy" Caption="Berechtigungsrichtlinie" />
+        <PropertyEditor Id="TypePermissions" Caption="Typzugriffsberechtigungen" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="NavigationPermissions" Caption="Navigationsberechtigungen" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="CustomApplicationRole_ListView">
+      <Columns>
+        <ColumnInfo Id="PermissionPolicy" Caption="Berechtigungsrichtlinie" />
+        <ColumnInfo Id="IsAdministrative" Caption="Ist Administrator" />
+        <ColumnInfo Id="CanEditModel" Caption="Kann Modell bearbeiten" />
+      </Columns>
+    </ListView>
+    <ListView Id="CustomApplicationRole_Users_ListView">
+      <Columns>
+        <ColumnInfo Id="UserName" Caption="Benutzername" />
+        <ColumnInfo Id="IsActive" Caption="Ist Aktiv" />
+      </Columns>
+    </ListView>
+    <DetailView Id="CustomApplicationUser_DetailView">
+      <Items>
+        <PropertyEditor Id="IsActive" Caption="Ist Aktiv" />
+        <PropertyEditor Id="UserName" Caption="Benutzername" />
+      </Items>
+    </DetailView>
+    <ListView Id="CustomApplicationUser_ListView">
+      <Columns>
+        <ColumnInfo Id="UserName" Caption="Benutzername" />
+        <ColumnInfo Id="IsActive" Caption="Ist Aktiv" />
+      </Columns>
+    </ListView>
+    <ListView Id="CustomApplicationUser_LookupListView">
+      <Columns>
+        <ColumnInfo Id="UserName" Caption="Benutzername" />
+      </Columns>
+    </ListView>
+    <ListView Id="CustomApplicationUser_Roles_ListView">
+      <Columns>
+        <ColumnInfo Id="PermissionPolicy" Caption="Berechtigungsrichtlinie" />
+        <ColumnInfo Id="IsAdministrative" Caption="Ist Administrator" />
+        <ColumnInfo Id="CanEditModel" Caption="Kann Modell bearbeiten" />
+      </Columns>
+    </ListView>
+    <DetailView Id="PermissionPolicyMemberPermissionsObject_DetailView">
+      <Items>
+        <PropertyEditor Id="Criteria" Caption="Kriterien" />
+        <PropertyEditor Id="Members" Caption="Felder" />
+        <PropertyEditor Id="ReadState" Caption="Lesen" />
+        <PropertyEditor Id="WriteState" Caption="Schreiben" />
+      </Items>
+    </DetailView>
+    <ListView Id="PermissionPolicyMemberPermissionsObject_ListView">
+      <Columns>
+        <ColumnInfo Id="Members" Caption="Felder" />
+        <ColumnInfo Id="ReadState" Caption="Lesen" />
+        <ColumnInfo Id="WriteState" Caption="Schreiben" />
+        <ColumnInfo Id="Criteria" Caption="Kriterien" />
+      </Columns>
+    </ListView>
+    <ListView Id="PermissionPolicyMemberPermissionsObject_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Members" Caption="Felder" />
+      </Columns>
+    </ListView>
+    <DetailView Id="PermissionPolicyNavigationPermissionObject_DetailView">
+      <Items>
+        <PropertyEditor Id="ItemPath" Caption="Navigationsleiste" />
+        <PropertyEditor Id="NavigateState" Caption="Navigieren" />
+      </Items>
+    </DetailView>
+    <ListView Id="PermissionPolicyNavigationPermissionObject_ListView">
+      <Columns>
+        <ColumnInfo Id="ItemPath" Caption="Navigationsleiste" />
+        <ColumnInfo Id="NavigateState" Caption="Navigieren" />
+      </Columns>
+    </ListView>
+    <ListView Id="PermissionPolicyNavigationPermissionObject_LookupListView">
+      <Columns>
+        <ColumnInfo Id="ItemPath" Caption="Navigationsleiste" />
+      </Columns>
+    </ListView>
+    <DetailView Id="PermissionPolicyObjectPermissionsObject_DetailView">
+      <Items>
+        <PropertyEditor Id="Criteria" Caption="Kriterien" />
+        <PropertyEditor Id="DeleteState" Caption="Löschen" />
+        <PropertyEditor Id="ReadState" Caption="Lesen" />
+        <PropertyEditor Id="WriteState" Caption="Schreiben" />
+      </Items>
+    </DetailView>
+    <ListView Id="PermissionPolicyObjectPermissionsObject_ListView">
+      <Columns>
+        <ColumnInfo Id="Criteria" Caption="Kriterien" />
+        <ColumnInfo Id="ReadState" Caption="Lesen" />
+        <ColumnInfo Id="WriteState" Caption="Schreiben" />
+        <ColumnInfo Id="DeleteState" Caption="Löschen" />
+      </Columns>
+    </ListView>
+    <ListView Id="PermissionPolicyObjectPermissionsObject_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Criteria" Caption="Kriterien" />
+      </Columns>
+    </ListView>
+    <DetailView Id="PermissionPolicyRoleBase_DetailView">
+      <Items>
+        <PropertyEditor Id="CanEditModel" Caption="Kann Modell bearbeiten" />
+        <PropertyEditor Id="IsAdministrative" Caption="Ist Administrator" />
+        <PropertyEditor Id="NavigationPermissions" Caption="Navigationsberechtigungen" />
+        <PropertyEditor Id="PermissionPolicy" Caption="Berechtigungsrichtlinie" />
+        <PropertyEditor Id="TypePermissions" Caption="Typzugriffsberechtigungen" />
+      </Items>
+    </DetailView>
+    <ListView Id="PermissionPolicyRoleBase_ListView">
+      <Columns>
+        <ColumnInfo Id="PermissionPolicy" Caption="Berechtigungsrichtlinie" />
+        <ColumnInfo Id="IsAdministrative" Caption="Ist Administrator" />
+        <ColumnInfo Id="CanEditModel" Caption="Kann Modell bearbeiten" />
+      </Columns>
+    </ListView>
+    <ListView Id="PermissionPolicyRoleBase_NavigationPermissions_ListView">
+      <Columns>
+        <ColumnInfo Id="ItemPath" Caption="Navigationsleiste" />
+        <ColumnInfo Id="NavigateState" Caption="Navigieren" />
+      </Columns>
+    </ListView>
+    <ListView Id="PermissionPolicyRoleBase_TypePermissions_ListView">
+      <Columns>
+        <ColumnInfo Id="TargetType" Caption="Zieltyp" />
+        <ColumnInfo Id="ReadState" Caption="Lesen" />
+        <ColumnInfo Id="WriteState" Caption="Schreiben" />
+        <ColumnInfo Id="CreateState" Caption="Erzeugen" />
+        <ColumnInfo Id="DeleteState" Caption="Löschen" />
+      </Columns>
+    </ListView>
+    <DetailView Id="PermissionPolicyTypePermissionObject_DetailView">
+      <Items>
+        <PropertyEditor Id="CreateState" Caption="Erzeugen" />
+        <PropertyEditor Id="DeleteState" Caption="Löschen" />
+        <PropertyEditor Id="MemberPermissions" Caption="Feldberechtigungen" />
+        <PropertyEditor Id="ObjectPermissions" Caption="Objektberechtigungen" />
+        <PropertyEditor Id="ReadState" Caption="Lesen" />
+        <PropertyEditor Id="TargetType" Caption="Zieltyp" />
+        <PropertyEditor Id="WriteState" Caption="Schreiben" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main">
+          <TabbedGroup Id="Tabs">
+            <LayoutGroup Id="MemberPermissions" Caption="Feldberechtigungen" />
+            <LayoutGroup Id="ObjectPermissions" Caption="Objektberechtigungen" />
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="PermissionPolicyTypePermissionObject_ListView">
+      <Columns>
+        <ColumnInfo Id="TargetType" Caption="Zieltyp" />
+        <ColumnInfo Id="ReadState" Caption="Lesen" />
+        <ColumnInfo Id="WriteState" Caption="Schreiben" />
+        <ColumnInfo Id="CreateState" Caption="Erzeugen" />
+        <ColumnInfo Id="DeleteState" Caption="Löschen" />
+      </Columns>
+    </ListView>
+    <ListView Id="PermissionPolicyTypePermissionObject_LookupListView">
+      <Columns>
+        <ColumnInfo Id="TargetType" Caption="Zieltyp" />
+      </Columns>
+    </ListView>
+    <ListView Id="PermissionPolicyTypePermissionObject_MemberPermissions_ListView">
+      <Columns>
+        <ColumnInfo Id="Members" Caption="Felder" />
+        <ColumnInfo Id="ReadState" Caption="Lesen" />
+        <ColumnInfo Id="WriteState" Caption="Schreiben" />
+        <ColumnInfo Id="Criteria" Caption="Kriterien" />
+      </Columns>
+    </ListView>
+    <ListView Id="PermissionPolicyTypePermissionObject_ObjectPermissions_ListView">
+      <Columns>
+        <ColumnInfo Id="Criteria" Caption="Kriterien" />
+        <ColumnInfo Id="ReadState" Caption="Lesen" />
+        <ColumnInfo Id="WriteState" Caption="Schreiben" />
+        <ColumnInfo Id="DeleteState" Caption="Löschen" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

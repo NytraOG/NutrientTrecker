@@ -1,0 +1,51 @@
+﻿using System;
+using System.Linq;
+using DevExpress.ExpressApp.Model;
+using DevExpress.ExpressApp.Xpo;
+using DevExpress.Xpo;
+
+namespace NyTEC.EnergyTrecker.Domain.Entities
+{
+    public class Gegessenes : BaseEntity
+    {
+        private double         menge;
+        private Nahrungsmittel nahrungsmittel;
+        private Tag            tag;
+
+        public Gegessenes(Session session) : base(session) { }
+
+        [Association]
+        public Nahrungsmittel Nahrungsmittel
+        {
+            get => nahrungsmittel;
+            set => SetPropertyValue(nameof(Nahrungsmittel), ref nahrungsmittel, value);
+        }
+
+        [ModelDefault("DisplayFormat", "{0:n0} g")]
+        public double Menge
+        {
+            get => menge;
+            set => SetPropertyValue(nameof(Menge), ref menge, value);
+        }
+
+        [Association]
+        public Tag Tag
+        {
+            get => tag;
+            set => SetPropertyValue(nameof(Tag), ref tag, value);
+        }
+
+        public override void AfterConstruction()
+        {
+            base.AfterConstruction();
+
+            var space = XPObjectSpace.FindObjectSpaceByObject(this);
+            
+            if(space!= null)
+            {
+                Tag ??= space.GetObjectsQuery<Tag>(true)
+                             .FirstOrDefault(t => t.Datum == DateTime.Today);
+            }
+        }
+    }
+}

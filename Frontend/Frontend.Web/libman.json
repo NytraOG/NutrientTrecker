@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "Modaal@0.4.4",
+      "destination": "lib/Modaal/"
+    },
+    {
+      "library": "limonte-sweetalert2@8.11.8",
+      "destination": "lib/limonte-sweetalert2/"
+    },
+    {
+      "library": "tingle@0.15.2",
+      "destination": "lib/tingle/"
+    }
+  ]
+}

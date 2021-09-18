@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="Frontend" CurrentUserDisplayMode="Default">
+  <ActionDesign>
+    <Actions>
+      <Action Id="Cancel" ImageName="custom_action_cancel" />
+      <Action Id="ChangePasswordByUser" ImageName="custom_action_changePassword" />
+      <Action Id="Delete" ImageName="custom_action_delete" />
+      <Action Id="Delete Item" ImageName="custom_action_delete" />
+      <Action Id="DialogOK" ValidationContexts="Save" />
+      <Action Id="Edit" ImageName="custom_action_edit" />
+      <Action Id="NextObject" ImageName="custom_action_next" />
+      <Action Id="PreviousObject" ImageName="custom_action_previous" />
+      <Action Id="Refresh" ImageName="custom_action_refresh" />
+      <Action Id="ResetPassword" ImageName="custom_action_setPassword" />
+      <Action Id="ResetViewSettings" ImageName="custom_action_reset_view" />
+      <Action Id="SwitchToEditMode" ImageName="custom_action_edit" />
+    </Actions>
+    <ActionToContainerMapping>
+      <ActionContainer Id="Edit">
+        <ActionLink ActionId="Cancel" IsNewNode="True" />
+      </ActionContainer>
+    </ActionToContainerMapping>
+  </ActionDesign>
+  <BOModel>
+    <Class Name="NyTEC.EnergyTrecker.Domain.Entities.Gericht" ImageName="Gericht.svg" />
+    <Class Name="NyTEC.EnergyTrecker.Domain.Entities.Nahrungsmittel" ImageName="CleanFood.svg" />
+    <Class Name="NyTEC.EnergyTrecker.Domain.Entities.Tag" ImageName="Tag.svg" />
+  </BOModel>
+  <NavigationItems ShowImages="True" DefaultLeafImageName="" DefaultParentImageName="">
+    <Items>
+      <Item Id="Kalender" Index="0" Caption="Kalender" ImageName="" ViewId="" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Tag" Caption="Tag" ImageName="Tag.svg" ViewId="Tag_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Foodstuff" Caption="Foodstuff" Index="10" IsNewNode="True">
+        <Items IsNewNode="True">
+          <Item Id="Nahrungsmittel" Caption="Nahrungsmittel" Index="0" ViewId="Nahrungsmittel_ListView" ImageName="CleanFood.svg" IsNewNode="True" />
+          <Item Id="Gerichte" Caption="Gerichte" ViewId="Gericht_ListView" IsNewNode="True" />
+        </Items>
+      </Item>
+      <Item Id="Administration" Index="200">
+        <Items>
+          <Item Id="CustomApplicationRole_ListView" Index="10" Caption="Rollen" />
+          <Item Id="CustomApplicationUser_ListView" Index="20" />
+          <Item Id="@3418781b-280b-4a55-8cda-f27e114e6adc" ViewId="Hilfeseite_ListView" Caption="Hilfeseiten" ImageName="custom_action_help.svg" Index="90" IsNewNode="True" />
+          <Item Id="AppConfig_ListView" Index="100" />
+          <Item Id="MyDetails" Removed="True" />
+        </Items>
+      </Item>
+    </Items>
+  </NavigationItems>
+  <Options CollectionsEditMode="Edit">
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <SchemaModules>
+    <SchemaModule Name="SystemAspNetModule" Version="21.1.5.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="21.1.5.0" IsNewNode="True" />
+  </SchemaModules>
+  <ViewItems>
+    <PropertyEditor Name="PropertyEditors">
+      <RegisteredPropertyEditor PropertyType="System.Drawing.Color" EditorType="DevExpress.ExpressApp.Web.Editors.ASPx.ASPxColorPickerPropertyEditor" />
+    </PropertyEditor>
+  </ViewItems>
+  <Views>
+    <ListView Id="AppConfig_ListView" Caption="App-Konfiguration" />
+    <DetailView Id="CustomApplicationRole_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="17.792421746293247">
+            <LayoutGroup Id="PermissionPolicyRoleBase" Index="0" RelativeSize="100">
+              <LayoutItem Id="Name" RelativeSize="29.62962962962963" />
+              <LayoutItem Id="PermissionPolicy" Index="1" RelativeSize="22.222222222222221" />
+              <LayoutItem Id="IsAdministrative" Index="2" RelativeSize="21.296296296296298" />
+              <LayoutItem Id="CanEditModel" Index="3" RelativeSize="26.851851851851851" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="82.207578253706757">
+            <LayoutGroup Id="Users" RelativeSize="100">
+              <LayoutItem Id="Users" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="TypePermissions" RelativeSize="100">
+              <LayoutItem Id="TypePermissions" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="NavigationPermissions" RelativeSize="100">
+              <LayoutItem Id="NavigationPermissions" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="CustomApplicationRole_ListView" Caption="Rollen" />
+    <DetailView Id="CustomApplicationUser_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="22.734761120263592">
+            <LayoutGroup Id="CustomApplicationUser" RelativeSize="58.695652173913047">
+              <LayoutItem Id="UserName" Index="0" RelativeSize="39.506172839506171" />
+              <LayoutItem Id="IsActive" RelativeSize="32.098765432098766" />
+            </LayoutGroup>
+            <LayoutGroup Id="BaseEntity" RelativeSize="41.304347826086953">
+              <LayoutItem Id="ErstelltAm" RelativeSize="47.368421052631582" />
+              <LayoutItem Id="GeändertAm" RelativeSize="52.631578947368418" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Gegessenes_DetailView">
+      <Items>
+        <PropertyEditor Id="Nahrungsmittel" PropertyEditorType="DevExpress.ExpressApp.Web.Editors.ASPx.ASPxGridLookupPropertyEditor" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Gegessenes" RelativeSize="100">
+              <LayoutItem Id="Nahrungsmittel" RelativeSize="5.2459016393442619" />
+              <LayoutItem Id="Menge" RelativeSize="94.754098360655732" />
+              <LayoutItem Id="Tag" RelativeSize="89.493433395872415" Removed="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="BaseEntity" Caption="BaseEntity" RelativeSize="83.864915572232647" Removed="True">
+              <LayoutItem Id="GeändertAm" Index="0" RelativeSize="100" Removed="True" />
+              <LayoutItem Id="ErstelltAm" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <DetailView Id="Nahrungsmittel_DetailView">
+      <Items>
+        <PropertyEditor Id="Datei" PropertyEditorType="DevExpress.ExpressApp.FileAttachments.Web.FileDataPropertyEditor" />
+        <StaticText Id="InfoText" Caption="Obacht" Text="Alle hier geforderten Werte sind in Einheiten pro 100g anzugeben" IsNewNode="True" />
+      </Items>
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="100">
+            <LayoutGroup Id="Nahrungsmittel" RelativeSize="100" Direction="Vertical" ShowCaption="False">
+              <LayoutGroup Id="Auto1f597ac3-e315-4df3-85d1-0b4509622f1f" ShowCaption="False" Caption="Auto1f597ac3-e315-4df3-85d1-0b4509622f1f(4)" Direction="Horizontal" Index="0" RelativeSize="27.590847913862717" IsNewNode="True">
+                <LayoutGroup Id="Nahrungsmittel_col1" ShowCaption="False" Index="0" RelativeSize="49.540078843626809" IsNewNode="True">
+                  <LayoutGroup Id="Item2" ShowCaption="True" Caption="Nährwerte" CaptionLocation="Top" Index="0" RelativeSize="100" IsNewNode="True">
+                    <LayoutItem Id="Name" ViewItem="Name" Index="0" RelativeSize="19.277108433734941" IsNewNode="True" />
+                    <LayoutItem Id="InfoText" ViewItem="InfoText" Index="1" RelativeSize="18.072289156626507" IsNewNode="True" />
+                    <LayoutItem Id="Kcal" ViewItem="Kcal" Index="2" RelativeSize="14.457831325301205" IsNewNode="True" />
+                    <LayoutItem Id="Protein" ViewItem="Protein" Index="3" RelativeSize="14.457831325301205" IsNewNode="True" />
+                    <LayoutItem Id="Fett" ViewItem="Fett" Index="4" RelativeSize="14.457831325301205" IsNewNode="True" />
+                    <LayoutItem Id="Carbs" ViewItem="Carbs" Index="5" RelativeSize="19.277108433734941" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+                <LayoutGroup Id="Nahrungsmittel_col2" ShowCaption="False" Index="1" RelativeSize="50.459921156373191" Caption="Abbildung" IsNewNode="True">
+                  <LayoutGroup Id="Item3" ShowCaption="True" CaptionLocation="Top" Index="0" RelativeSize="100" Caption="Was fürs Auge" IsNewNode="True">
+                    <LayoutItem Id="Datei" ViewItem="Datei" Index="0" RelativeSize="19.277108433734941" IsNewNode="True" />
+                    <LayoutItem Id="Bild" ViewItem="Bild" Index="1" RelativeSize="80.722891566265062" IsNewNode="True" />
+                  </LayoutGroup>
+                </LayoutGroup>
+              </LayoutGroup>
+              <LayoutGroup Id="Nahrungsmittel_col1" ShowCaption="False" Index="0" RelativeSize="50" Removed="True">
+                <LayoutItem Id="Name" ViewItem="Name" Index="0" RelativeSize="4.0150564617314934" IsNewNode="True" />
+                <LayoutItem Id="Energy" ViewItem="Energy" Index="1" RelativeSize="3.0112923462986196" IsNewNode="True" />
+                <LayoutItem Id="Protein" ViewItem="Protein" Index="2" RelativeSize="92.973651191969893" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="Item1" Index="1" RelativeSize="72.409152086137283" IsNewNode="True" />
+              <LayoutGroup Id="Nahrungsmittel_col2" ShowCaption="False" Index="1" RelativeSize="50" Removed="True">
+                <LayoutItem Id="Carbs" ViewItem="Carbs" Index="0" RelativeSize="4.0150564617314934" IsNewNode="True" />
+                <LayoutItem Id="Fett" ViewItem="Fett" Index="1" RelativeSize="3.0112923462986196" IsNewNode="True" />
+                <LayoutItem Id="Abbildung" ViewItem="Abbildung" Index="2" RelativeSize="92.973651191969893" IsNewNode="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="BaseEntity" RelativeSize="85.560859188544157" Caption="BaseEntity" Removed="True">
+              <LayoutItem Id="ErstelltAm" RelativeSize="100" Removed="True" />
+              <LayoutItem Id="GeändertAm" RelativeSize="95.81589958158996" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="Gegessenes_Group" Direction="Vertical" RelativeSize="33.293556085918851" Removed="True">
+            <LayoutItem Id="Gegessenes" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Nahrungsmittel_ListView">
+      <Columns>
+        <ColumnInfo Id="Datei" Index="-1" />
+        <ColumnInfo Id="Name" Width="88" Index="0" />
+        <ColumnInfo Id="Kcal" Index="1" />
+        <ColumnInfo Id="Protein" Index="2" />
+        <ColumnInfo Id="Carbs" Index="3" />
+        <ColumnInfo Id="Fett" Index="4" />
+        <ColumnInfo Id="Thumbnail" Index="5" />
+      </Columns>
+    </ListView>
+    <ListView Id="Nahrungsmittel_LookupListView">
+      <Columns>
+        <ColumnInfo Id="Thumbnail" PropertyName="Thumbnail" Index="0" Width="63" IsNewNode="True" />
+        <ColumnInfo Id="Name" Index="1" Width="76" />
+        <ColumnInfo Id="Kcal" PropertyName="Kcal" Index="2" IsNewNode="True" />
+        <ColumnInfo Id="Protein" PropertyName="Protein" Index="3" IsNewNode="True" />
+        <ColumnInfo Id="Fett" PropertyName="Fett" Index="4" IsNewNode="True" />
+        <ColumnInfo Id="Carbs" PropertyName="Carbs" Index="5" IsNewNode="True" />
+      </Columns>
+    </ListView>
+    <DetailView Id="Tag_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="17.183770883054894">
+            <LayoutGroup Id="Tag" RelativeSize="50.694444444444443" Caption="Tag" Direction="Horizontal">
+              <LayoutItem Id="Datum" ViewItem="Datum" Index="0" RelativeSize="31.950207468879668" IsNewNode="True" Removed="True" />
+              <LayoutGroup Id="Tag_col1" Index="1" RelativeSize="68.049792531120332" Direction="Horizontal">
+                <LayoutItem Id="User" RelativeSize="51.829268292682926" Index="0" />
+                <LayoutItem Id="Einwaage" RelativeSize="48.170731707317074" Index="1" />
+                <LayoutItem Id="Datum" RelativeSize="36.363636363636367" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="Tag_col2" Index="2" RelativeSize="47.916666666666664" Caption="Tag_col2" Removed="True">
+                <LayoutItem Id="GesamtProtein" RelativeSize="100" Index="0" Removed="True" />
+                <LayoutItem Id="GesamtKcal" RelativeSize="50" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="1" RelativeSize="49.305555555555557" Caption="Nährstoffe gesamt" IsNewNode="True">
+              <LayoutItem Id="GesamtKcal" ViewItem="GesamtKcal" Index="0" RelativeSize="32.2268326417704" IsNewNode="True" />
+              <LayoutItem Id="GesamtProtein" ViewItem="GesamtProtein" Index="1" RelativeSize="34.993084370677728" IsNewNode="True" />
+              <LayoutItem Id="GesamtFett" ViewItem="GesamtFett" Index="2" RelativeSize="32.780082987551864" IsNewNode="True" />
+            </LayoutGroup>
+            <LayoutGroup Id="BaseEntity" Caption="BaseEntity" RelativeSize="25.862068965517242" Removed="True">
+              <LayoutItem Id="GeändertAm" Index="0" RelativeSize="100" Removed="True" />
+              <LayoutItem Id="ErstelltAm" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="GegesseneDinge_Group" Direction="Vertical" RelativeSize="82.816229116945109">
+            <LayoutItem Id="GegesseneDinge" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
+    <ListView Id="Tag_GegesseneDinge_ListView">
+      <Columns>
+        <ColumnInfo Id="Nahrungsmittel.Thumbnail" PropertyName="Nahrungsmittel.Thumbnail" Index="0" IsNewNode="True" />
+        <ColumnInfo Id="Nahrungsmittel" Index="1" />
+        <ColumnInfo Id="Menge" Index="2" />
+      </Columns>
+    </ListView>
+  </Views>
+</Application>

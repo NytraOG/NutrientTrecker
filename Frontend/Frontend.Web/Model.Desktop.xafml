@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+<Application Title="Frontend">
+  <Options CollectionsEditMode="Edit" />
+  <ViewItems>
+    <PropertyEditor Name="PropertyEditors">
+      <RegisteredPropertyEditor PropertyType="System.Drawing.Color" EditorType="DevExpress.ExpressApp.Web.Editors.ASPx.ASPxColorPickerPropertyEditor" />
+    </PropertyEditor>
+  </ViewItems>
+    <Views>
+  </Views>
+</Application>
