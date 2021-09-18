@@ -189,6 +189,7 @@
     <Content Include="Images\appconfig.svg" />
     <Content Include="Images\back.svg" />
     <Content Include="Images\CleanFood.svg" />
+    <Content Include="Images\facelol.png" />
     <Content Include="Images\Gericht.svg" />
     <Content Include="Images\custom_action_setPassword_Active.svg" />
     <Content Include="Images\custom_action_cancel.svg" />

@@ -176,13 +176,13 @@ TagPrefix="xaf" %>
         <ul class="ft-legal paddings">
             <li>
                 <%= ConfigurationManager.AppSettings["ApplicationName"] %> <%= ConfigurationManager.AppSettings["ApplicationVersion"] %><br/>
-                Co-Orga GmbH
+                nyTEC GmbH
             </li>
-            <li style="text-align: right;">
-                <small>entwickelt für</small>
+<%--            <li style="text-align: right;">
+                <small>entwickelt von</small>
                 <br/>
-                <img src="<%= ResolveUrl("~/Images/Kunde.svg") %>">
-            </li>
+                <img src="<%= ResolveUrl("~/Images/facelol.png") %>">
+            </li>--%>
         </ul>
     </div>
 </div>
