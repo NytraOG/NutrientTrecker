@@ -7,7 +7,7 @@ namespace NyTEC.EnergyTrecker.Domain.Utils
 {
     public static class FileDataHelper
     {
-        private const int LängsteSeite = 50;
+        private const int LängsteSeite = 100;
 
         public static Image ErstelleBildAusDatei(FileData datei)
         {

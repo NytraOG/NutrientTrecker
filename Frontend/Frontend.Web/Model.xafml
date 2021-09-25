@@ -179,8 +179,8 @@
     <ListView Id="Nahrungsmittel_ListView">
       <Columns>
         <ColumnInfo Id="Datei" Index="-1" />
-        <ColumnInfo Id="Name" Width="88" Index="0" />
-        <ColumnInfo Id="Kcal" Index="1" />
+        <ColumnInfo Id="Name" Width="88" Index="0" SortIndex="-1" SortOrder="None" />
+        <ColumnInfo Id="Kcal" Index="1" SortIndex="0" SortOrder="Descending" />
         <ColumnInfo Id="Protein" Index="2" />
         <ColumnInfo Id="Carbs" Index="3" />
         <ColumnInfo Id="Fett" Index="4" />
@@ -234,6 +234,12 @@
         <ColumnInfo Id="Nahrungsmittel.Thumbnail" PropertyName="Nahrungsmittel.Thumbnail" Index="0" IsNewNode="True" />
         <ColumnInfo Id="Nahrungsmittel" Index="1" />
         <ColumnInfo Id="Menge" Index="2" />
+      </Columns>
+    </ListView>
+    <ListView Id="Tag_ListView">
+      <Columns>
+        <ColumnInfo Id="Datum" SortIndex="0" SortOrder="Descending" />
+        <ColumnInfo Id="Einwaage" SortIndex="-1" SortOrder="None" />
       </Columns>
     </ListView>
   </Views>

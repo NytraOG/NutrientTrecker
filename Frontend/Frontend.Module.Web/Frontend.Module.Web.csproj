@@ -150,7 +150,37 @@
       <Version>21.1.5</Version>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DatabaseUpdate\Images\BakedBeans.png" />
+    <Content Include="DatabaseUpdate\Images\Butter.png" />
+    <Content Include="DatabaseUpdate\Images\Buttergemüse.png" />
+    <Content Include="DatabaseUpdate\Images\Ei.png" />
+    <Content Include="DatabaseUpdate\Images\FrischkäseLight.png" />
+    <Content Include="DatabaseUpdate\Images\GeflügelwurstTürke.png" />
+    <Content Include="DatabaseUpdate\Images\Harzer.png" />
+    <Content Include="DatabaseUpdate\Images\Huhn.png" />
+    <Content Include="DatabaseUpdate\Images\Kartoffel.png" />
+    <Content Include="DatabaseUpdate\Images\Knoblauch.png" />
+    <Content Include="DatabaseUpdate\Images\Kochschinken.png" />
+    <Content Include="DatabaseUpdate\Images\Krustenbrot.png" />
+    <Content Include="DatabaseUpdate\Images\köllnhafer.png" />
+    <Content Include="DatabaseUpdate\Images\löwensenfextra.png" />
+    <Content Include="DatabaseUpdate\Images\MangoMochi.png" />
+    <Content Include="DatabaseUpdate\Images\Mayo.png" />
+    <Content Include="DatabaseUpdate\Images\Milch1-5.png" />
+    <Content Include="DatabaseUpdate\Images\Milch3-5.png" />
+    <Content Include="DatabaseUpdate\Images\Olivenöl.png" />
+    <Content Include="DatabaseUpdate\Images\pinkL.png" />
+    <Content Include="DatabaseUpdate\Images\Reis.png" />
+    <Content Include="DatabaseUpdate\Images\Romasalat.jpg" />
+    <Content Include="DatabaseUpdate\Images\RoteZwiebel.png" />
+    <Content Include="DatabaseUpdate\Images\Schalotten.png" />
+    <Content Include="DatabaseUpdate\Images\Schlemmerfilet.png" />
+    <Content Include="DatabaseUpdate\Images\Schmelzkäse leicht.png" />
+    <Content Include="DatabaseUpdate\Images\SkyrNatur.png" />
+    <Content Include="DatabaseUpdate\Images\Tomate.png" />
+    <Content Include="DatabaseUpdate\Images\Whey.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.

@@ -40,8 +40,8 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
             base.AfterConstruction();
 
             var space = XPObjectSpace.FindObjectSpaceByObject(this);
-            
-            if(space!= null)
+
+            if (space != null)
             {
                 Tag ??= space.GetObjectsQuery<Tag>(true)
                              .FirstOrDefault(t => t.Datum == DateTime.Today);

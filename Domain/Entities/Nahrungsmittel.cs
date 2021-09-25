@@ -78,6 +78,9 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
         [Association]
         public XPCollection<Gegessenes> Gegessenes => GetCollection<Gegessenes>(nameof(Gegessenes));
 
+        [Association]
+        public XPCollection<Zutat> Zutaten => GetCollection<Zutat>(nameof(Zutaten));
+
         private Image BildAusDateiErstellen() => FileDataHelper.ErstelleBildAusDatei(Datei);
 
         private Image ThumbnailAusBildErstellen() => FileDataHelper.ErstelleThumbnailAusBild(LazyBild);

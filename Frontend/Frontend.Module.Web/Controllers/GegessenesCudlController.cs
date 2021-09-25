@@ -6,6 +6,11 @@ namespace Frontend.Module.Web.Controllers
 {
     public class GegessenesCudlController : DisableCudlActionsController<Gegessenes>
     {
+        public GegessenesCudlController()
+        {
+            TargetViewId = "Tag_GegesseneDinge_ListView";
+        }
+        
         protected override void OnActivated()
         {
             base.OnActivated();

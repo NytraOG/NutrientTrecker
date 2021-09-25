@@ -103,7 +103,7 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
                 User = Session.GetObjectByKey<CustomApplicationUser>(applicationUser.Oid);
         }
 
-        private void GibAlleNährstoffe()
+        public void GibAlleNährstoffe()
         {
             GesamtKcal    = GibKcal();
             GesamtProtein = GibProtein();

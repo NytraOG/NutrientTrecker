@@ -73,6 +73,7 @@
     <Compile Include="Entities\Security\CustomApplicationRole.cs" />
     <Compile Include="Entities\Security\CustomApplicationUser.cs" />
     <Compile Include="Entities\Tag.cs" />
+    <Compile Include="Entities\Zutat.cs" />
     <Compile Include="Konstanten.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>
