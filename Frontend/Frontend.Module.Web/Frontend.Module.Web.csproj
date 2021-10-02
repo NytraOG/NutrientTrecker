@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -113,12 +114,15 @@
   <ItemGroup>
     <Compile Include="Controllers\AnwendungseinstellungenActionStatusController.cs" />
     <Compile Include="Controllers\GegessenesCudlController.cs" />
+    <Compile Include="Controllers\GerichtKonsumierenController.cs" />
+    <Compile Include="Controllers\kekwController.cs" />
     <Compile Include="Controllers\SetDefaultWidthController.cs" />
     <Compile Include="Controllers\SetFormattingCultureAndLanguageController.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />
     <Compile Include="Editors\ASPXxLookupPropertyEditorNavigateToMainWindow.cs" />
     <Compile Include="ModelUpdates\DisableShowSelectionColumn.cs" />
     <Compile Include="ModelUpdates\SetDefaultPageSize.cs" />
+    <Compile Include="ViewModels\GerichtKonsumierenViewModel.cs" />
     <Compile Include="WebModule.cs">
       <SubType>Component</SubType>
     </Compile>
