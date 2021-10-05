@@ -1,5 +1,7 @@
-﻿using DevExpress.ExpressApp;
+﻿using System;
+using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.Actions;
+using DevExpress.ExpressApp.Editors;
 using DevExpress.Persistent.Base;
 using DevExpress.Utils.Extensions;
 using Frontend.Module.Web.ViewModels;
@@ -37,7 +39,10 @@ namespace Frontend.Module.Web.Controllers
                     tag.GegesseneDinge.Add(gegessenes);
                 });
 
+                tag.GibAlleNährstoffe();
+                
                 ObjectSpace.CommitChanges();
+                View.RefreshDataSource();
             }
         }
 
@@ -50,6 +55,7 @@ namespace Frontend.Module.Web.Controllers
 
                 var vm   = new GerichtKonsumierenViewModel(space);
                 var view = Application.CreateDetailView(npSpace, vm);
+                view.ViewEditMode = ViewEditMode.Edit;
                 e.View = view;
             }
         }

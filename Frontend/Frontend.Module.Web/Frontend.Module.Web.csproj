@@ -112,10 +112,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AnwendungseinstellungenActionStatusController.cs" />
-    <Compile Include="Controllers\GegessenesCudlController.cs" />
     <Compile Include="Controllers\GerichtKonsumierenController.cs" />
-    <Compile Include="Controllers\kekwController.cs" />
     <Compile Include="Controllers\SetDefaultWidthController.cs" />
     <Compile Include="Controllers\SetFormattingCultureAndLanguageController.cs" />
     <Compile Include="DatabaseUpdate\Updater.cs" />

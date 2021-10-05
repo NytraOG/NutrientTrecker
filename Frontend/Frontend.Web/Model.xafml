@@ -170,9 +170,6 @@
               <LayoutItem Id="GeändertAm" RelativeSize="95.81589958158996" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="Gegessenes_Group" Direction="Vertical" RelativeSize="33.293556085918851" Removed="True">
-            <LayoutItem Id="Gegessenes" RelativeSize="100" />
-          </LayoutGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
@@ -242,5 +239,10 @@
         <ColumnInfo Id="Einwaage" SortIndex="-1" SortOrder="None" />
       </Columns>
     </ListView>
+    <DetailView Id="Zutat_DetailView">
+      <Items>
+        <PropertyEditor Id="Nahrungsmittel" PropertyEditorType="DevExpress.ExpressApp.Web.Editors.ASPx.ASPxGridLookupPropertyEditor" />
+      </Items>
+    </DetailView>
   </Views>
 </Application>

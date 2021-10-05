@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using DevExpress.ExpressApp;
+using DevExpress.ExpressApp.DC;
 using DevExpress.ExpressApp.Model;
 using DevExpress.Persistent.Base;
 using DevExpress.Persistent.Validation;
@@ -10,6 +11,7 @@ using NyTEC.EnergyTrecker.Domain.Entities;
 
 namespace Frontend.Module.Web.ViewModels
 {
+    [DomainComponent]
     public class GerichtKonsumierenViewModel
     {
         private readonly IObjectSpace space;
@@ -28,11 +30,12 @@ namespace Frontend.Module.Web.ViewModels
         public int Menge { get; set; }
 
         [ImmediatePostData]
-        [DataSourceCriteria(nameof(Gerichte))]
+        [DataSourceProperty(nameof(Gerichte))]
         public Gericht Gericht { get; set; }
 
         [ImmediatePostData]
         [MemberDesignTimeVisibility(false)]
+        [VisibleInDetailView(false )]
         public List<Gericht> Gerichte { get; set; }
     }
 }

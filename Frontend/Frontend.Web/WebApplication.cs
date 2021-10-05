@@ -37,6 +37,7 @@ namespace Frontend.Web
         private ValidationModule              validationModule;
         private DevExpress.ExpressApp.FileAttachments.Web.FileAttachmentsAspNetModule fileAttachmentsAspNetModule1;
         private CoOrga.XAF.Modules.CoreExtensions.CoreExtensionsModule coreExtensionsModule1;
+        private FrontendAspNetModule frontendAspNetModule1;
         private ViewVariantsModule            viewVariantsModule;
 
         public FrontendAspNetApplication()
@@ -115,6 +116,7 @@ namespace Frontend.Web
             this.authenticationActiveDirectory1 = new DevExpress.ExpressApp.Security.AuthenticationActiveDirectory();
             this.fileAttachmentsAspNetModule1 = new DevExpress.ExpressApp.FileAttachments.Web.FileAttachmentsAspNetModule();
             this.coreExtensionsModule1 = new CoOrga.XAF.Modules.CoreExtensions.CoreExtensionsModule();
+            this.frontendAspNetModule1 = new Frontend.Module.Web.FrontendAspNetModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // validationModule
@@ -152,7 +154,8 @@ namespace Frontend.Web
             this.Modules.Add(this.viewVariantsModule);
             this.Modules.Add(this.fileAttachmentsAspNetModule1);
             this.Modules.Add(this.coreExtensionsModule1);
-            this.Security = this.securityStrategyComplex1;
+            this.Modules.Add(this.frontendAspNetModule1);
+            this.Security           =  this.securityStrategyComplex1;
             DatabaseVersionMismatch += FrontendAspNetApplication_DatabaseVersionMismatch;
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
