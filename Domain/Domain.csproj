@@ -39,17 +39,17 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.ExpressApp.Security.v21.1, Version=21.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.ExpressApp.Xpo.v21.1">
+    <Reference Include="DevExpress.ExpressApp.Security.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Xpo.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Persistent.Base.v21.1">
+    <Reference Include="DevExpress.Persistent.Base.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Persistent.BaseImpl.v21.1">
+    <Reference Include="DevExpress.Persistent.BaseImpl.Xpo.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
-    <Reference Include="DevExpress.Xpo.v21.1">
+    <Reference Include="DevExpress.Xpo.v21.2">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="System">
@@ -90,10 +90,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CoOrga.XAF.Modules.CoreExtensions">
-      <Version>21.1.5.16924</Version>
+      <Version>21.2.6.18709</Version>
     </PackageReference>
     <PackageReference Include="DevExpress.ExpressApp">
-      <Version>21.1.5</Version>
+      <Version>21.2.6</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
