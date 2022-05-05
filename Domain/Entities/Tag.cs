@@ -23,6 +23,7 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
         private double                gesamtFett;
         private double                gesamtKcal;
         private double                gesamtProtein;
+        private double                gesamtCarbs;
         private CustomApplicationUser user;
 
         public Tag(Session session) : base(session)
@@ -83,6 +84,16 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
             set => SetPropertyValue(nameof(GesamtFett), ref gesamtFett, value);
         }
 
+        [XafDisplayName("Carbs")]
+        [ModelDefault("AllowEdit", "false")]
+        [ModelDefault("DisplayFormat", "{0:n0} g")]
+        public double GesamtCarbs
+        {
+            get => gesamtCarbs;
+            set => SetPropertyValue(nameof(GesamtCarbs), ref gesamtCarbs, value);
+        }
+
+
         [Association]
         public XPCollection<Gegessenes> GegesseneDinge => GetCollection<Gegessenes>(nameof(GegesseneDinge));
 
@@ -108,6 +119,7 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
             GesamtKcal    = GibKcal();
             GesamtProtein = GibProtein();
             GesamtFett    = GibFett();
+            GesamtCarbs   = GibCarbs();
         }
         
         private double GibFett() => GegesseneDinge.Sum(gg => gg.Menge / 100 * gg.Nahrungsmittel.Fett);
@@ -115,6 +127,7 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
         private double GibProtein() => GegesseneDinge.Sum(gg => gg.Menge / 100 * gg.Nahrungsmittel.Protein);
 
         private double GibKcal()  => GegesseneDinge.Sum(gg => gg.Menge / 100 * gg.Nahrungsmittel.Kcal);
+        private double GibCarbs() => GegesseneDinge.Sum(gg => gg.Menge / 100 * gg.Nahrungsmittel.Carbs);
 
         private void GegesseneDingeOnCollectionChanged(object sender, XPCollectionChangedEventArgs e)
         {
