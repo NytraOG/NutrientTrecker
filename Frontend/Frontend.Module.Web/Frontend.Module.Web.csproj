@@ -112,6 +112,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Cudl\GegessenesCudlController.cs" />
     <Compile Include="Controllers\GerichtKonsumierenController.cs" />
     <Compile Include="Controllers\SetDefaultWidthController.cs" />
     <Compile Include="Controllers\SetFormattingCultureAndLanguageController.cs" />
@@ -185,6 +186,7 @@
     <Content Include="DatabaseUpdate\Images\Tomate.png" />
     <Content Include="DatabaseUpdate\Images\Whey.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
