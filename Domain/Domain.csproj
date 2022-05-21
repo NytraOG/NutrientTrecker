@@ -69,11 +69,13 @@
     <Compile Include="Entities\AppConfig.cs" />
     <Compile Include="Entities\Gegessenes.cs" />
     <Compile Include="Entities\Gericht.cs" />
+    <Compile Include="Entities\Log.cs" />
     <Compile Include="Entities\Nahrungsmittel.cs" />
     <Compile Include="Entities\Security\CustomApplicationRole.cs" />
     <Compile Include="Entities\Security\CustomApplicationUser.cs" />
     <Compile Include="Entities\Tag.cs" />
     <Compile Include="Entities\Zutat.cs" />
+    <Compile Include="Interfaces\INahrhaft.cs" />
     <Compile Include="Konstanten.cs" />
     <Compile Include="Module.cs">
       <SubType>Component</SubType>

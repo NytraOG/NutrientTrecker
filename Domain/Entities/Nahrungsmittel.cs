@@ -5,11 +5,12 @@ using DevExpress.Persistent.Base;
 using DevExpress.Persistent.BaseImpl;
 using DevExpress.Persistent.Validation;
 using DevExpress.Xpo;
+using NyTEC.EnergyTrecker.Domain.Interfaces;
 using FileDataHelper = NyTEC.EnergyTrecker.Domain.Utils.FileDataHelper;
 
 namespace NyTEC.EnergyTrecker.Domain.Entities
 {
-    public class Nahrungsmittel : BaseEntity
+    public class Nahrungsmittel : BaseEntity, INahrhaft
     {
         private FileData datei;
         private double   carbs;

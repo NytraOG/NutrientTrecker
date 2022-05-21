@@ -47,5 +47,24 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
                              .FirstOrDefault(t => t.Datum == DateTime.Today);
             }
         }
+
+        protected override void OnSaving()
+        {
+            base.OnSaving();
+
+            //var logEntry = new Log(Session)
+            //{
+            //    Carbs = Menge / 100 * Nahrungsmittel.Carbs,
+            //    Protein = Menge / 100 * Nahrungsmittel.Protein,
+            //    Fett = Menge / 100 * Nahrungsmittel.Fett,
+            //    Kcal = Menge / 100 * Nahrungsmittel.Kcal,
+            //    Menge = Menge,
+            //    Zeitpunkt = DateTime.Now,
+            //    ObjektDesKonsums = Nahrungsmittel,
+
+            //};
+
+            
+        }
     }
 }

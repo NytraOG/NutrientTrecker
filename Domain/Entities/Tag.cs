@@ -20,16 +20,13 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
     {
         private DateTime              datum;
         private double                einwaage;
+        private double                gesamtCarbs;
         private double                gesamtFett;
         private double                gesamtKcal;
         private double                gesamtProtein;
-        private double                gesamtCarbs;
         private CustomApplicationUser user;
 
-        public Tag(Session session) : base(session)
-        {
-            GegesseneDinge.CollectionChanged += GegesseneDingeOnCollectionChanged;
-        }
+        public Tag(Session session) : base(session) => GegesseneDinge.CollectionChanged += GegesseneDingeOnCollectionChanged;
 
         [ModelDefault("DisplayFormat", "dd.MM.yyyy")]
         [ModelDefault("EditMask", "dd.MM.yyyy")]
@@ -93,9 +90,11 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
             set => SetPropertyValue(nameof(GesamtCarbs), ref gesamtCarbs, value);
         }
 
-
         [Association]
         public XPCollection<Gegessenes> GegesseneDinge => GetCollection<Gegessenes>(nameof(GegesseneDinge));
+
+        [Association]
+        public XPCollection<Log> Log => GetCollection<Log>(nameof(Log));
 
         protected override void OnSaving()
         {
@@ -121,20 +120,21 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
             GesamtFett    = GibFett();
             GesamtCarbs   = GibCarbs();
         }
-        
+
         private double GibFett() => GegesseneDinge.Sum(gg => gg.Menge / 100 * gg.Nahrungsmittel.Fett);
 
         private double GibProtein() => GegesseneDinge.Sum(gg => gg.Menge / 100 * gg.Nahrungsmittel.Protein);
 
-        private double GibKcal()  => GegesseneDinge.Sum(gg => gg.Menge / 100 * gg.Nahrungsmittel.Kcal);
+        private double GibKcal() => GegesseneDinge.Sum(gg => gg.Menge / 100 * gg.Nahrungsmittel.Kcal);
+
         private double GibCarbs() => GegesseneDinge.Sum(gg => gg.Menge / 100 * gg.Nahrungsmittel.Carbs);
 
         private void GegesseneDingeOnCollectionChanged(object sender, XPCollectionChangedEventArgs e)
         {
-            if(e.CollectionChangedType == XPCollectionChangedType.AfterRemove)
+            if (e.CollectionChangedType == XPCollectionChangedType.AfterRemove)
                 GibAlleNährstoffe();
         }
-        
+
         public override string ToString() => $"{Datum:dd.MM.yyyy}";
     }
 }
