@@ -31,7 +31,6 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
         [ModelDefault("DisplayFormat", "dd.MM.yyyy")]
         [ModelDefault("EditMask", "dd.MM.yyyy")]
         [Indexed(nameof(User), Unique = true)]
-        [ModelDefault("AllowEdit", "false")]
         public DateTime Datum
         {
             get => datum;
