@@ -36,7 +36,7 @@ namespace Frontend.Module.Web {
             this.AdditionalExportedTypes.Add(typeof(DevExpress.Xpo.PersistentBase));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule));
             this.RequiredModuleTypes.Add(typeof(DevExpress.ExpressApp.Validation.Web.ValidationAspNetModule));
-            this.RequiredModuleTypes.Add(typeof(DomainModule));
+            this.RequiredModuleTypes.Add(typeof(NyTEC.EnergyTrecker.Domain.DomainModule));
 
         }
 

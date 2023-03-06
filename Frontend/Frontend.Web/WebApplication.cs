@@ -25,20 +25,20 @@ namespace Frontend.Web
     // For more typical usage scenarios, be sure to check out https://docs.devexpress.com/eXpressAppFramework/DevExpress.ExpressApp.Web.WebApplication
     public class FrontendAspNetApplication : WebApplication
     {
-        private AuthenticationActiveDirectory authenticationActiveDirectory1;
-        private ConditionalAppearanceModule   conditionalAppearanceModule;
-        private DomainModule           domainModule1;
-        private SystemModule                  module1;
-        private SystemAspNetModule            module2;
-        private FrontendAspNetModule          module4;
-        private SecurityModule                securityModule1;
-        private SecurityStrategyComplex       securityStrategyComplex1;
-        private ValidationAspNetModule        validationAspNetModule;
-        private ValidationModule              validationModule;
+        private AuthenticationStandard                                                authenticationStandard;
+        private SecurityStrategyComplex                                               securityStrategyComplex1;
+        private ConditionalAppearanceModule                                           conditionalAppearanceModule;
+        private DomainModule                                                          domainModule1;
+        private SystemModule                                                          module1;
+        private SystemAspNetModule                                                    module2;
+        private FrontendAspNetModule                                                  module4;
+        private SecurityModule                                                        securityModule1;
+        private ValidationAspNetModule                                                validationAspNetModule;
+        private ValidationModule                                                      validationModule;
         private DevExpress.ExpressApp.FileAttachments.Web.FileAttachmentsAspNetModule fileAttachmentsAspNetModule1;
-        private CoOrga.XAF.Modules.CoreExtensions.CoreExtensionsModule coreExtensionsModule1;
-        private FrontendAspNetModule frontendAspNetModule1;
-        private ViewVariantsModule            viewVariantsModule;
+        private CoOrga.XAF.Modules.CoreExtensions.CoreExtensionsModule                coreExtensionsModule1;
+        private FrontendAspNetModule                                                  frontendAspNetModule1;
+        private ViewVariantsModule                                                    viewVariantsModule;
 
         public FrontendAspNetApplication()
         {
@@ -103,20 +103,20 @@ namespace Frontend.Web
 
         private void InitializeComponent()
         {
-            this.module1 = new DevExpress.ExpressApp.SystemModule.SystemModule();
-            this.module2 = new DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule();
-            this.conditionalAppearanceModule = new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule();
-            this.validationModule = new DevExpress.ExpressApp.Validation.ValidationModule();
-            this.validationAspNetModule = new DevExpress.ExpressApp.Validation.Web.ValidationAspNetModule();
-            this.viewVariantsModule = new DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule();
-            this.domainModule1 = new NyTEC.EnergyTrecker.Domain.DomainModule();
-            this.module4 = new Frontend.Module.Web.FrontendAspNetModule();
-            this.securityModule1 = new DevExpress.ExpressApp.Security.SecurityModule();
-            this.securityStrategyComplex1 = new DevExpress.ExpressApp.Security.SecurityStrategyComplex();
-            this.authenticationActiveDirectory1 = new DevExpress.ExpressApp.Security.AuthenticationActiveDirectory();
+            this.module1                      = new DevExpress.ExpressApp.SystemModule.SystemModule();
+            this.module2                      = new DevExpress.ExpressApp.Web.SystemModule.SystemAspNetModule();
+            this.conditionalAppearanceModule  = new DevExpress.ExpressApp.ConditionalAppearance.ConditionalAppearanceModule();
+            this.validationModule             = new DevExpress.ExpressApp.Validation.ValidationModule();
+            this.validationAspNetModule       = new DevExpress.ExpressApp.Validation.Web.ValidationAspNetModule();
+            this.viewVariantsModule           = new DevExpress.ExpressApp.ViewVariantsModule.ViewVariantsModule();
+            securityStrategyComplex1          = new SecurityStrategyComplex();
+            authenticationStandard            = new AuthenticationStandard();
+            this.domainModule1                = new NyTEC.EnergyTrecker.Domain.DomainModule();
+            this.module4                      = new Frontend.Module.Web.FrontendAspNetModule();
+            this.securityModule1              = new DevExpress.ExpressApp.Security.SecurityModule();
             this.fileAttachmentsAspNetModule1 = new DevExpress.ExpressApp.FileAttachments.Web.FileAttachmentsAspNetModule();
-            this.coreExtensionsModule1 = new CoOrga.XAF.Modules.CoreExtensions.CoreExtensionsModule();
-            this.frontendAspNetModule1 = new Frontend.Module.Web.FrontendAspNetModule();
+            this.coreExtensionsModule1        = new CoOrga.XAF.Modules.CoreExtensions.CoreExtensionsModule();
+            this.frontendAspNetModule1        = new Frontend.Module.Web.FrontendAspNetModule();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // validationModule
@@ -126,19 +126,18 @@ namespace Frontend.Web
             // 
             // securityStrategyComplex1
             // 
-            this.securityStrategyComplex1.AllowAnonymousAccess = false;
-            this.securityStrategyComplex1.Authentication = this.authenticationActiveDirectory1;
-            this.securityStrategyComplex1.PermissionsReloadMode = DevExpress.ExpressApp.Security.PermissionsReloadMode.NoCache;
-            this.securityStrategyComplex1.RoleType = typeof(NyTEC.EnergyTrecker.Domain.Entities.Security.CustomApplicationRole);
-            this.securityStrategyComplex1.SupportNavigationPermissionsForTypes = false;
-            this.securityStrategyComplex1.UseOptimizedPermissionRequestProcessor = false;
-            this.securityStrategyComplex1.UserType = typeof(NyTEC.EnergyTrecker.Domain.Entities.Security.CustomApplicationUser);
-            // 
-            // authenticationActiveDirectory1
-            // 
-            this.authenticationActiveDirectory1.CreateUserAutomatically = true;
-            this.authenticationActiveDirectory1.LogonParametersType = null;
-            this.authenticationActiveDirectory1.UserLoginInfoType = null;
+            securityStrategyComplex1.AllowAnonymousAccess                   = false;
+            securityStrategyComplex1.Authentication                         = authenticationStandard;
+            securityStrategyComplex1.PermissionsReloadMode                  = PermissionsReloadMode.NoCache;
+            securityStrategyComplex1.RoleType                               = typeof(CustomApplicationRole);
+            securityStrategyComplex1.SupportNavigationPermissionsForTypes   = false;
+            securityStrategyComplex1.UseOptimizedPermissionRequestProcessor = false;
+            securityStrategyComplex1.UserType                               = typeof(CustomApplicationUser);
+            //
+            // AuthenticationStandard
+            //
+            authenticationStandard.UserType = typeof(CustomApplicationUser);
+
             // 
             // FrontendAspNetApplication
             // 
@@ -155,8 +154,6 @@ namespace Frontend.Web
             this.Modules.Add(this.fileAttachmentsAspNetModule1);
             this.Modules.Add(this.coreExtensionsModule1);
             this.Modules.Add(this.frontendAspNetModule1);
-            this.Security           =  this.securityStrategyComplex1;
-            DatabaseVersionMismatch += FrontendAspNetApplication_DatabaseVersionMismatch;
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

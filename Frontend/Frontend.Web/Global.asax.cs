@@ -8,8 +8,10 @@ using DevExpress.ExpressApp.Security;
 using DevExpress.ExpressApp.Web;
 using DevExpress.ExpressApp.Web.Editors.ASPx;
 using DevExpress.Persistent.Base;
+using DevExpress.Persistent.BaseImpl.PermissionPolicy;
 using DevExpress.Web;
 using DevExpress.Xpo.Logger;
+using NyTEC.EnergyTrecker.Domain.Entities.Security;
 
 namespace Frontend.Web
 {
@@ -32,8 +34,13 @@ namespace Frontend.Web
         }
         protected void Session_Start(Object sender, EventArgs e)
         {
+  
             Tracing.Initialize();
             WebApplication.SetInstance(Session, new FrontendAspNetApplication());
+
+            WebApplication.Instance.Security =
+                    new SecurityStrategyComplex(typeof(CustomApplicationUser), typeof(CustomApplicationRole),
+                                                new AuthenticationStandard());
 
             WebApplication.Instance.Settings.DefaultVerticalTemplateContentPath = $"{nameof(DefaultVerticalTemplateContent)}.ascx";
 
