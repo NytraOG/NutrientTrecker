@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" Inherits="Frontend.Web.LoginPage" EnableViewState="false"
 ValidateRequest="false" CodeBehind="Login.aspx.cs" %>
-<%@ Register Assembly="DevExpress.ExpressApp.Web.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+<%@ Register Assembly="DevExpress.ExpressApp.Web.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
 Namespace="DevExpress.ExpressApp.Web.Controls" TagPrefix="cc4" %>
 <!DOCTYPE html>
 <html>

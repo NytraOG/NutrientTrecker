@@ -14,12 +14,16 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
     [Appearance("GroupVisibility",
                 AppearanceItemType.ViewItem,
                 nameof(GesamtKcal) + " == 0 AND " + nameof(GesamtProtein) + " == 0 AND " + nameof(GesamtFett) + " == 0",
-                TargetItems = nameof(GesamtKcal) + ";" + nameof(GesamtProtein) + ";" + nameof(GesamtFett),
+                TargetItems = nameof(GesamtKcal) + ";" + nameof(GesamtProtein) + ";" + nameof(GesamtFett) + ";" + nameof(GesamtCarbs),
                 Visibility = ViewItemVisibility.Hide)]
+    [Appearance("MachFreeiKcalGrün", AppearanceItemType.ViewItem, nameof(MachFreeKcalGrün), TargetItems = nameof(FreieKcal), FontColor = "green")]
+    [Appearance("MachFreeiKcalGelb", AppearanceItemType.ViewItem, nameof(MachFreeKcalGelb), TargetItems = nameof(FreieKcal), FontColor = "orange")]
+    [Appearance("MachFreeiKcalRot", AppearanceItemType.ViewItem, nameof(MachFreeKcalRot), TargetItems = nameof(FreieKcal), FontColor = "red")]
     public class Tag : BaseEntity
     {
         private DateTime              datum;
         private double                einwaage;
+        private double                freieKcal;
         private double                gesamtCarbs;
         private double                gesamtFett;
         private double                gesamtKcal;
@@ -62,6 +66,15 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
             set => SetPropertyValue(nameof(GesamtKcal), ref gesamtKcal, value);
         }
 
+        [XafDisplayName("Free Kcal")]
+        [ModelDefault("AllowEdit", "false")]
+        [ModelDefault("DisplayFormat", "{0:n0}")]
+        public double FreieKcal
+        {
+            get => freieKcal;
+            set => SetPropertyValue(nameof(FreieKcal), ref freieKcal, value);
+        }
+
         [XafDisplayName("Protein")]
         [ModelDefault("AllowEdit", "false")]
         [ModelDefault("DisplayFormat", "{0:n0} g")]
@@ -89,11 +102,25 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
             set => SetPropertyValue(nameof(GesamtCarbs), ref gesamtCarbs, value);
         }
 
-        [Association]
-        public XPCollection<Gegessenes> GegesseneDinge => GetCollection<Gegessenes>(nameof(GegesseneDinge));
+        [MemberDesignTimeVisibility(false)]
+        public bool MachFreeKcalGrün => TodaysCalorieIntake - GesamtKcal > 1000;
+
+        [MemberDesignTimeVisibility(false)]
+        public bool MachFreeKcalGelb => TodaysCalorieIntake - GesamtKcal > 500 && TodaysCalorieIntake - GesamtKcal < 1000;
+
+        [MemberDesignTimeVisibility(false)]
+        public bool MachFreeKcalRot => TodaysCalorieIntake - GesamtKcal <= 50;
+
+        [MemberDesignTimeVisibility(false)]
+        public double TodaysCalorieIntake => User.IntakeConfigurations
+                                                 .First(c => c.Active)
+                                                 .GetCalorieIntakeByDayOfWeek(DateTime.Now.DayOfWeek);
 
         [Association]
-        public XPCollection<Log> Log => GetCollection<Log>(nameof(Log));
+        public XPCollection<Gegessenes> GegesseneDinge => GetCollection<Gegessenes>();
+
+        [Association]
+        public XPCollection<Log> Log => GetCollection<Log>();
 
         protected override void OnSaving()
         {

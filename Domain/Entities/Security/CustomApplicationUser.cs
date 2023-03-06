@@ -26,8 +26,11 @@ namespace NyTEC.EnergyTrecker.Domain.Entities.Security
         public CustomApplicationUser(Session session) : base(session) { }
 
         [Association]
-        public XPCollection<Tag> Tage => GetCollection<Tag>(nameof(Tage));
-        
+        public XPCollection<Tag> Tage => GetCollection<Tag>();
+
+        [Association]
+        public XPCollection<WeeklyIntakeConfiguration> IntakeConfigurations => GetCollection<WeeklyIntakeConfiguration>();
+
         #region ICanInitialize Members
 
         public void Initialize(IObjectSpace objectSpace, SecurityStrategyComplex security)
@@ -63,10 +66,7 @@ namespace NyTEC.EnergyTrecker.Domain.Entities.Security
         [SecurityBrowsable]
         protected string StoredPassword { get; set; }
 
-        public bool ComparePassword(string password)
-        {
-            return PasswordCryptographer.VerifyHashedPasswordDelegate(StoredPassword, password);
-        }
+        public bool ComparePassword(string password) => PasswordCryptographer.VerifyHashedPasswordDelegate(StoredPassword, password);
 
         public void SetPassword(string password)
         {
@@ -102,7 +102,7 @@ namespace NyTEC.EnergyTrecker.Domain.Entities.Security
 
         [Association]
         [XafDisplayName("Rollen")]
-        public XPCollection<CustomApplicationRole> Roles => GetCollection<CustomApplicationRole>(nameof(Roles));
+        public XPCollection<CustomApplicationRole> Roles => GetCollection<CustomApplicationRole>();
 
         IList<ISecurityRole> ISecurityUserWithRoles.Roles
         {

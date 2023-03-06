@@ -39,7 +39,7 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.ExpressApp.Security.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Security.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.ExpressApp.Xpo.v22.1">
       <SpecificVersion>False</SpecificVersion>
     </Reference>
@@ -67,6 +67,7 @@
     <Compile Include="Entities\AppConfigOptions.cs" />
     <Compile Include="Entities\BaseEntity.cs" />
     <Compile Include="Entities\AppConfig.cs" />
+    <Compile Include="Entities\WeeklyIntakeConfiguration.cs" />
     <Compile Include="Entities\Gegessenes.cs" />
     <Compile Include="Entities\Gericht.cs" />
     <Compile Include="Entities\Log.cs" />
@@ -92,10 +93,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CoOrga.XAF.Modules.CoreExtensions">
-      <Version>22.1.4.19730</Version>
+      <Version>22.1.5.19892</Version>
     </PackageReference>
     <PackageReference Include="DevExpress.ExpressApp">
-      <Version>22.1.4</Version>
+      <Version>22.1.5</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>
