@@ -106,7 +106,7 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
         public bool MachFreeKcalGrün => TodaysCalorieIntake - GesamtKcal > 1000;
 
         [MemberDesignTimeVisibility(false)]
-        public bool MachFreeKcalGelb => TodaysCalorieIntake - GesamtKcal > 500 && TodaysCalorieIntake - GesamtKcal < 1000;
+        public bool MachFreeKcalGelb => TodaysCalorieIntake - GesamtKcal > 50 && TodaysCalorieIntake - GesamtKcal < 1000;
 
         [MemberDesignTimeVisibility(false)]
         public bool MachFreeKcalRot => TodaysCalorieIntake - GesamtKcal <= 50;
@@ -127,6 +127,8 @@ namespace NyTEC.EnergyTrecker.Domain.Entities
             base.OnSaving();
 
             GibAlleNährstoffe();
+
+            FreieKcal = TodaysCalorieIntake - GesamtKcal;
         }
 
         public override void AfterConstruction()
