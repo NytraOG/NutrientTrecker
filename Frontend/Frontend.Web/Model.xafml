@@ -54,8 +54,8 @@
     <LayoutManagerOptions RequiredFieldMark="*" />
   </Options>
   <SchemaModules>
-    <SchemaModule Name="SystemAspNetModule" Version="21.2.6.0" IsNewNode="True" />
-    <SchemaModule Name="SystemModule" Version="21.2.6.0" IsNewNode="True" />
+    <SchemaModule Name="SystemAspNetModule" Version="22.1.5.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.1.5.0" IsNewNode="True" />
   </SchemaModules>
   <ViewItems>
     <PropertyEditor Name="PropertyEditors">
@@ -93,16 +93,27 @@
     <DetailView Id="CustomApplicationUser_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="22.734761120263592">
-            <LayoutGroup Id="CustomApplicationUser" RelativeSize="58.695652173913047">
-              <LayoutItem Id="UserName" Index="0" RelativeSize="39.506172839506171" />
-              <LayoutItem Id="IsActive" RelativeSize="32.098765432098766" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="14.093137254901961">
+            <LayoutGroup Id="CustomApplicationUser" RelativeSize="50.434782608695649">
+              <LayoutItem Id="UserName" Index="0" RelativeSize="55.172413793103445" />
+              <LayoutItem Id="IsActive" RelativeSize="44.827586206896555" />
             </LayoutGroup>
-            <LayoutGroup Id="BaseEntity" RelativeSize="41.304347826086953">
+            <LayoutGroup Id="BaseEntity" RelativeSize="49.565217391304351">
               <LayoutItem Id="ErstelltAm" RelativeSize="47.368421052631582" />
               <LayoutItem Id="GeändertAm" RelativeSize="52.631578947368418" />
             </LayoutGroup>
           </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="85.906862745098039">
+            <LayoutGroup Id="IntakeConfigurations" Index="0" RelativeSize="100">
+              <LayoutItem Id="IntakeConfigurations" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Tage" Index="1" RelativeSize="100">
+              <LayoutItem Id="Tage" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Roles" RelativeSize="100">
+              <LayoutItem Id="Roles" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
@@ -197,12 +208,12 @@
     <DetailView Id="Tag_DetailView">
       <Layout>
         <LayoutGroup Id="Main" RelativeSize="100">
-          <LayoutGroup Id="SimpleEditors" RelativeSize="21.851289833080425">
-            <LayoutGroup Id="Tag" RelativeSize="50.694444444444443" Caption="Tag" Direction="Horizontal">
-              <LayoutItem Id="Datum" ViewItem="Datum" Index="0" RelativeSize="31.818181818181817" IsNewNode="True" Removed="True" />
-              <LayoutGroup Id="Tag_col1" Index="1" RelativeSize="68.181818181818187" Direction="Horizontal">
-                <LayoutItem Id="User" RelativeSize="38.8235294117647" Index="0" />
-                <LayoutItem Id="Einwaage" RelativeSize="61.1764705882353" Index="1" />
+          <LayoutGroup Id="SimpleEditors" RelativeSize="20.588235294117649">
+            <LayoutGroup Id="Tag" RelativeSize="43.452380952380949" Caption="Tag" Direction="Horizontal">
+              <LayoutItem Id="Datum" ViewItem="Datum" Index="0" RelativeSize="31.877729257641921" IsNewNode="True" Removed="True" />
+              <LayoutGroup Id="Tag_col1" Index="1" RelativeSize="68.122270742358083" Direction="Horizontal">
+                <LayoutItem Id="User" RelativeSize="38.888888888888886" Index="0" />
+                <LayoutItem Id="Einwaage" RelativeSize="61.111111111111114" Index="1" />
                 <LayoutItem Id="GesamtKcal" Index="2" RelativeSize="25.294117647058822" Removed="True" />
                 <LayoutItem Id="Datum" RelativeSize="36.363636363636367" Removed="True" />
               </LayoutGroup>
@@ -211,20 +222,28 @@
                 <LayoutItem Id="GesamtKcal" RelativeSize="50" Removed="True" />
               </LayoutGroup>
             </LayoutGroup>
-            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="1" RelativeSize="49.305555555555557" Caption="Nährstoffe gesamt" IsNewNode="True">
-              <LayoutItem Id="GesamtKcal" ViewItem="GesamtKcal" Index="0" RelativeSize="27.941176470588236" IsNewNode="True" />
-              <LayoutItem Id="GesamtProtein" ViewItem="GesamtProtein" Index="1" RelativeSize="23.663101604278076" IsNewNode="True" />
-              <LayoutItem Id="GesamtFett" ViewItem="GesamtFett" Index="2" RelativeSize="24.197860962566846" IsNewNode="True" />
-              <LayoutItem Id="GesamtCarbs" ViewItem="GesamtCarbs" Index="3" RelativeSize="24.197860962566846" IsNewNode="True" />
+            <LayoutGroup Id="Item1" ShowCaption="True" CaptionLocation="Top" Direction="Horizontal" Index="1" RelativeSize="56.547619047619051" Caption="Nährstoffe gesamt" IsNewNode="True">
+              <LayoutGroup Id="Auto8dd17f3e-6c59-46dc-8398-58133416507d" ShowCaption="False" Caption="" Index="0" RelativeSize="27.802037845705968" IsNewNode="True">
+                <LayoutItem Id="GesamtKcal" ViewItem="GesamtKcal" Index="0" RelativeSize="50" IsNewNode="True" />
+                <LayoutItem Id="FreieKcal" ViewItem="FreieKcal" Index="1" RelativeSize="50" IsNewNode="True" />
+              </LayoutGroup>
+              <LayoutItem Id="GesamtProtein" ViewItem="GesamtProtein" Index="1" RelativeSize="23.580786026200872" IsNewNode="True" />
+              <LayoutItem Id="GesamtFett" ViewItem="GesamtFett" Index="2" RelativeSize="24.163027656477439" IsNewNode="True" />
+              <LayoutItem Id="GesamtCarbs" ViewItem="GesamtCarbs" Index="3" RelativeSize="24.454148471615721" IsNewNode="True" />
             </LayoutGroup>
             <LayoutGroup Id="BaseEntity" Caption="BaseEntity" RelativeSize="25.862068965517242" Removed="True">
               <LayoutItem Id="GeändertAm" Index="0" RelativeSize="100" Removed="True" />
               <LayoutItem Id="ErstelltAm" Removed="True" />
             </LayoutGroup>
           </LayoutGroup>
-          <LayoutGroup Id="GegesseneDinge_Group" Direction="Vertical" RelativeSize="78.148710166919571">
-            <LayoutItem Id="GegesseneDinge" RelativeSize="100" />
-          </LayoutGroup>
+          <TabbedGroup Id="Tabs" RelativeSize="79.411764705882348">
+            <LayoutGroup Id="GegesseneDinge" RelativeSize="100">
+              <LayoutItem Id="GegesseneDinge" RelativeSize="100" />
+            </LayoutGroup>
+            <LayoutGroup Id="Log" RelativeSize="100">
+              <LayoutItem Id="Log" RelativeSize="100" />
+            </LayoutGroup>
+          </TabbedGroup>
         </LayoutGroup>
       </Layout>
     </DetailView>
@@ -241,6 +260,43 @@
         <ColumnInfo Id="Einwaage" SortIndex="-1" SortOrder="None" />
       </Columns>
     </ListView>
+    <DetailView Id="WeeklyIntakeConfiguration_DetailView">
+      <Layout>
+        <LayoutGroup Id="Main" RelativeSize="100">
+          <LayoutGroup Id="SimpleEditors" RelativeSize="22.303921568627452">
+            <LayoutGroup Id="WeeklyIntakeConfiguration" RelativeSize="100" ShowCaption="False">
+              <LayoutGroup Id="WeeklyIntakeConfiguration_col1" RelativeSize="45.9802538787024">
+                <LayoutItem Id="DailyMaintenanceIntake" RelativeSize="17.582417582417584" />
+                <LayoutItem Id="WeeklyDeficite" RelativeSize="13.186813186813186" />
+                <LayoutItem Id="Active" ViewItem="Active" Index="2" RelativeSize="69.230769230769226" IsNewNode="True" />
+                <LayoutItem Id="Monday" RelativeSize="13.259668508287293" Index="3" Removed="True" />
+                <LayoutItem Id="Thursday" RelativeSize="56.593406593406591" Index="3" Removed="True" />
+                <LayoutItem Id="Tuesday" RelativeSize="15.286624203821656" Index="3" Removed="True" />
+                <LayoutItem Id="Wednesday" RelativeSize="15.189873417721518" Index="3" Removed="True" />
+              </LayoutGroup>
+              <LayoutGroup Id="WeeklyIntakeConfiguration_col2" RelativeSize="54.0197461212976">
+                <LayoutItem Id="Monday" ViewItem="Monday" Index="0" RelativeSize="17.582417582417584" IsNewNode="True" />
+                <LayoutItem Id="Tuesday" ViewItem="Tuesday" Index="1" RelativeSize="13.186813186813186" IsNewNode="True" />
+                <LayoutItem Id="Wednesday" ViewItem="Wednesday" Index="2" RelativeSize="13.186813186813186" IsNewNode="True" />
+                <LayoutItem Id="Thursday" ViewItem="Thursday" Index="3" RelativeSize="13.186813186813186" IsNewNode="True" />
+                <LayoutItem Id="Friday" ViewItem="Friday" Index="4" RelativeSize="13.186813186813186" IsNewNode="True" Removed="True" />
+                <LayoutItem Id="Saturday" RelativeSize="13.186813186813186" Index="5" />
+                <LayoutItem Id="Sunday" RelativeSize="16.483516483516482" Index="6" />
+                <LayoutItem Id="User" RelativeSize="14.563106796116505" Index="7" Removed="True" />
+                <LayoutItem Id="Active" RelativeSize="14.556962025316455" Removed="True" />
+              </LayoutGroup>
+            </LayoutGroup>
+            <LayoutGroup Id="BaseEntity" Caption="BaseEntity" RelativeSize="15.720524017467248" Removed="True">
+              <LayoutItem Id="GeändertAm" Index="0" RelativeSize="100" Removed="True" />
+              <LayoutItem Id="ErstelltAm" Removed="True" />
+            </LayoutGroup>
+          </LayoutGroup>
+          <LayoutGroup Id="SizeableEditors" RelativeSize="77.696078431372555">
+            <LayoutItem Id="InfoBox" RelativeSize="100" />
+          </LayoutGroup>
+        </LayoutGroup>
+      </Layout>
+    </DetailView>
     <DetailView Id="Zutat_DetailView">
       <Items>
         <PropertyEditor Id="Nahrungsmittel" PropertyEditorType="DevExpress.ExpressApp.Web.Editors.ASPx.ASPxGridLookupPropertyEditor" />
