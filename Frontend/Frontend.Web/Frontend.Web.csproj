@@ -185,7 +185,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DBUpdater\DBUpdater.v21.1.exe" />
+    <Content Include="DBUpdater\DBUpdater.v22.1.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="DefaultVerticalTemplateContent.ascx" />
     <Content Include="Error.aspx" />
@@ -311,9 +313,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DBUpdater\DBUpdater.v21.1.exe.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <None Include="DBUpdater\DBUpdater.v22.1.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />

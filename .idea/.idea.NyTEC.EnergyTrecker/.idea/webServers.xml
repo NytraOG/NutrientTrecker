@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="a9604ba6-8e7a-48db-8c98-417c510f989c" name="IONOS Publish" url="http://access954318113.webspace-data.io">
+        <fileTransfer explicitFtps="false" rootFolder="/u111495599" accessType="FTPS" host="access954318113.webspace-data.io" port="990">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
