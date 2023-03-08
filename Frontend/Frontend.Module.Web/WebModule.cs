@@ -20,7 +20,6 @@ namespace Frontend.Module.Web
     {
         public FrontendAspNetModule()
         {
-            MachMigration();
             InitializeComponent();
         }
 

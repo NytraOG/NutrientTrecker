@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CoOrga.DevExpress.SpaceManagement, Version=22.1.5.19889, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CoOrga.DevExpress.SpaceManagement.22.1.5.19889\lib\net472\CoOrga.DevExpress.SpaceManagement.dll</HintPath>
+    </Reference>
     <Reference Include="CoOrga.XAF.Modules.CoreExtensions, Version=22.1.5.19892, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\CoOrga.XAF.Modules.CoreExtensions.22.1.5.19892\lib\net472\CoOrga.XAF.Modules.CoreExtensions.dll</HintPath>
     </Reference>

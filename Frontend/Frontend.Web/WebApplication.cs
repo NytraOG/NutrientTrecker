@@ -1,5 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Collections.Generic;
+using NyTEC.EnergyTrecker.Domain.Entities;
+using DevExpress.Persistent.BaseImpl;
+using CoOrga.DevExpress.SpaceManagement;
 using System.Data;
 using System.Diagnostics;
 using System.Web;
@@ -52,12 +56,13 @@ namespace Frontend.Web
             return new ViewUrlManager();
         }
 
-        private static void MachMigration()
+        private void MachMigration()
         {
-            var types = new List<Type>();
-            types.AddRange(typeof(Tag).Assembly.GetTypes());
-            types.AddRange(typeof(FileData).Assembly.GetTypes());
-            DatabaseOperations.CreateOrUpdateDatabaseAndSchema("User Id=dbo954319730;Password=cG!H3n5XMy6EVfu;Pooling=false;Data Source=db954319730.hosting-data.io;Initial Catalog=db954319730", types);
+            //var types = new List<Type>();
+            //types.AddRange(typeof(Tag).Assembly.GetTypes());
+            //types.AddRange(typeof(FileData).Assembly.GetTypes());
+            //DatabaseOperations.CreateOrUpdateDatabaseAndSchema("User Id=dbo954319730;Password=cG!H3n5XMy6EVfu;Pooling=false;Data Source=db954319730.hosting-data.io;Initial Catalog=db954319730", types);
+            //DatabaseOperations.CreateOrUpdateDatabaseAndSchema("Integrated Security=SSPI;Pooling=false;Data Source=DESKTOP-7FA7F9C\\MSSQLSERVER2019;Initial Catalog=NyTEC.NutrientTrecker_Local2", types);
         }
 
         protected override void CreateDefaultObjectSpaceProvider(CreateCustomObjectSpaceProviderEventArgs args)

@@ -25,9 +25,9 @@ namespace Frontend.Module.Web.DatabaseUpdate
 
             CustomApplicationUser userAdmin = ObjectSpace.FindObject<CustomApplicationUser>(new BinaryOperator("UserName", "Admin"));
 
-            if (userAdmin == null)
+            if (userAdmin != null)
             {
-                userAdmin          = ObjectSpace.CreateObject<CustomApplicationUser>();
+                //userAdmin          = ObjectSpace.CreateObject<CustomApplicationUser>();
                 userAdmin.UserName = "Admin";
                 // Set a password if the standard authentication type is used
                 userAdmin.SetPassword("");
