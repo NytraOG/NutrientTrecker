@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using CoOrga.DevExpress.SpaceManagement;
 using DevExpress.ExpressApp;
 using DevExpress.ExpressApp.DC;
 using DevExpress.ExpressApp.Model.Core;
@@ -8,6 +9,7 @@ using DevExpress.ExpressApp.Updating;
 using DevExpress.ExpressApp.Xpo;
 using DevExpress.Persistent.BaseImpl;
 using Frontend.Module.Web.ModelUpdates;
+using NyTEC.EnergyTrecker.Domain.Entities;
 using Updater = Frontend.Module.Web.DatabaseUpdate.Updater;
 
 namespace Frontend.Module.Web
@@ -18,8 +20,10 @@ namespace Frontend.Module.Web
     {
         public FrontendAspNetModule()
         {
+            MachMigration();
             InitializeComponent();
         }
+
 
         //private void Application_CreateCustomModelDifferenceStore(Object sender, CreateCustomModelDifferenceStoreEventArgs e) {
         //    e.Store = new ModelDifferenceDbStore((XafApplication)sender, typeof(ModelDifference), true, "Web");
@@ -57,5 +61,6 @@ namespace Frontend.Module.Web
             base.CustomizeTypesInfo(typesInfo);
             CalculatedPersistentAliasHelper.CustomizeTypesInfo(typesInfo);
         }
+
     }
 }

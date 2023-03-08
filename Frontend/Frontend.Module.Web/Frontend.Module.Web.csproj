@@ -146,6 +146,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CoOrga.DevExpress.SpaceManagement">
+      <Version>22.1.5.19889</Version>
+    </PackageReference>
     <PackageReference Include="CoOrga.XAF.Modules.CoreExtensions">
       <Version>22.1.5.19892</Version>
     </PackageReference>

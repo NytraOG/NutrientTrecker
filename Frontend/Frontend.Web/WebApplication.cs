@@ -42,6 +42,7 @@ namespace Frontend.Web
 
         public FrontendAspNetApplication()
         {
+            MachMigration();
             InitializeComponent();
             InitializeDefaults();
         }
@@ -49,6 +50,14 @@ namespace Frontend.Web
         protected override IViewUrlManager CreateViewUrlManager()
         {
             return new ViewUrlManager();
+        }
+
+        private static void MachMigration()
+        {
+            var types = new List<Type>();
+            types.AddRange(typeof(Tag).Assembly.GetTypes());
+            types.AddRange(typeof(FileData).Assembly.GetTypes());
+            DatabaseOperations.CreateOrUpdateDatabaseAndSchema("User Id=dbo954319730;Password=cG!H3n5XMy6EVfu;Pooling=false;Data Source=db954319730.hosting-data.io;Initial Catalog=db954319730", types);
         }
 
         protected override void CreateDefaultObjectSpaceProvider(CreateCustomObjectSpaceProviderEventArgs args)
